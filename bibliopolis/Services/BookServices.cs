@@ -33,37 +33,13 @@ namespace bibliopolis.Services
                     res.Units = request.Units;
 
                     _context.Books.Add(res);
+                    MessageBox.Show("Libro agregado correctamente");
                     _context.SaveChanges();
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception("Sucedió un error (AddBook)" + ex.Message);
-            }
-        }
-
-        public Book ReadBook(Book request)
-        {
-            try
-            {
-                if (InputValidator.IsObjectNull(request))
-                {
-                    MessageBox.Show("Por favor, llene todos los campos");
-                    return request;
-                }
-
-                using (var _context = new ApplicationDbContext())
-                {
-                    Book res = _context.Books.Find(request.ISBN);
-
-                    if (res == null)
-                        MessageBox.Show("El libro no está registrado");
-                    return res;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Sucedió un error (ReadBook)" + ex.Message);
             }
         }
 
@@ -97,19 +73,20 @@ namespace bibliopolis.Services
             }
         }
 
-        public void DeleteBook(Book request)
+        public void DeleteBook(string searchedISBN)
         {
             try
             {
                 using (var _context = new ApplicationDbContext())
                 {
-                    Book res = _context.Books.Find(request.ISBN);
+                    Book res = _context.Books.Find(searchedISBN);
                     if (InputValidator.IsObjectNull(res))
                     {
                         MessageBox.Show("No se encontró el registro");
                         return;
                     }
                     _context.Books.Remove(res);
+                    MessageBox.Show("Libro eliminado correctamente");
                     _context.SaveChanges();
                 }
             }
@@ -118,5 +95,31 @@ namespace bibliopolis.Services
                 throw new Exception("Sucedió un error (ReadBook)" + ex.Message);
             }
         }
+
+        public List<Book> GetBooks()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+
+                    List<Book> book = _context.Books.ToList();
+
+                    if (book.Count > 0)
+                    {
+                        return book;
+                    }
+                    return book;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedió un error (GetBooks)" + ex.Message);
+            }
+        }
+
+
+
+
     }
 }

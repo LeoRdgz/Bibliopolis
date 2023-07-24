@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bibliopolis.Views.SuperAdminViews;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,13 @@ namespace bibliopolis.Views
             Close();
             managestudents.Show();
 
+        }
+
+        private void BTN_ManageBooks_Click(object sender, RoutedEventArgs e)
+        {
+            ManageBooks managebooks = new ManageBooks();
+            Close();
+            managebooks.Show();
         }
     }
 }

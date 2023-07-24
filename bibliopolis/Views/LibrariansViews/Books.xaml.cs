@@ -1,6 +1,6 @@
-﻿using bibliopolis.Services;
+﻿using bibliopolis.Entities;
+using bibliopolis.Services;
 using bibliopolis.Validations;
-using bibliopolis.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,17 +15,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace bibliopolis.Views.SuperAdminViews
+namespace bibliopolis.Views.LibrariansViews
 {
     /// <summary>
-    /// Lógica de interacción para ManageBooks.xaml
+    /// Lógica de interacción para Books.xaml
     /// </summary>
-    public partial class ManageBooks : Window
+    public partial class Books : Window
     {
         BookServices services = new BookServices();
         private bool isEditMode;
 
-        public ManageBooks()
+        public Books()
         {
             InitializeComponent();
             GetBooksTable();
@@ -48,9 +48,9 @@ namespace bibliopolis.Views.SuperAdminViews
 
         private void BTN_GoBack_Click(object sender, RoutedEventArgs e)
         {
-            SuperAdminMenu SuperAdminWindow = new SuperAdminMenu();
+            HomeMenu HomeMenu = new HomeMenu();
             Close();
-            SuperAdminWindow.Show();
+            HomeMenu.Show();
         }
 
         private void BTN_EditItem_Click(object sender, EventArgs e) // Misma función que en 'ManageStudents.xaml.cs'
@@ -68,17 +68,6 @@ namespace bibliopolis.Views.SuperAdminViews
             TxtUnits.Text = book.Units;
 
             isEditMode = true;
-        }
-
-        private void BTN_Delete_Click(object sender, RoutedEventArgs e)
-        {
-            Book book = new Book();
-
-            book = (sender as FrameworkElement).DataContext as Book;
-            string DeletedBook = book.ISBN;
-            services.DeleteBook(DeletedBook);
-            GetBooksTable();
-
         }
 
         private void BTN_Save_Click()
@@ -120,6 +109,5 @@ namespace bibliopolis.Views.SuperAdminViews
                 MessageBox.Show($"Error al guardar el libro.\n {ex.Message}");
             }
         }
-
     }
 }

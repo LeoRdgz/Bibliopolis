@@ -10,12 +10,10 @@ namespace bibliopolis.Entities
 {
     public class Book
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Key] 
-        public long ISBN { get; set; }
+        [Key] public string ISBN { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string Editorial { get; set; }
-        public int Units { get; set; }
+        public string Units { get; set; }
     }
 }

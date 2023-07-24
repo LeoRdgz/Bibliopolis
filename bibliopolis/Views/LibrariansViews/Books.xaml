@@ -1,11 +1,11 @@
-﻿<Window x:Class="bibliopolis.Views.SuperAdminViews.ManageBooks"
+﻿<Window x:Class="bibliopolis.Views.LibrariansViews.Books"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:bibliopolis.Views.SuperAdminViews"
+        xmlns:local="clr-namespace:bibliopolis.Views.LibrariansViews"
         mc:Ignorable="d"
-        Title="ManageBooks" Height="500" Width="800">
+        Title="Books" Height="500" Width="800">
     <Grid>
         <TextBox x:Name="TxtISBN" 
                  MaxLength="13"
@@ -95,13 +95,6 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Editar" Click="BTN_EditItem_Click" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Eliminar">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="Eliminar" Background="Yellow" Click="BTN_Delete_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

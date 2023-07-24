@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\simpl\OneDrive\Escritorio\projectBibliopolis\bibliopolis\obj\Debug\net5.0-windows\
+C:\Users\Leonardo Rdgz\OneDrive\Documentos\GitHub\Bibliopolis\bibliopolis\obj\Debug\net5.0-windows\
 bibliopolis
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\simpl\OneDrive\Escritorio\projectBibliopolis\bibliopolis\App.xaml
-7-1938731391
+C:\Users\Leonardo Rdgz\OneDrive\Documentos\GitHub\Bibliopolis\bibliopolis\App.xaml
+8-816670544
 
-24-1165502050
-2161909018536
-MainWindow.xaml;Views\LibrariansViews\HomeMenu.xaml;Views\LibrariansViews\Students.xaml;Views\SuperAdminViews\ManageBooks.xaml;Views\SuperAdminViews\ManageLibrarians.xaml;Views\SuperAdminViews\ManageStudents.xaml;Views\SuperAdminViews\SuperAdminMenu.xaml;
+251218541965
+216-232643221
+MainWindow.xaml;Views\LibrariansViews\Books.xaml;Views\LibrariansViews\HomeMenu.xaml;Views\LibrariansViews\Students.xaml;Views\SuperAdminViews\ManageBooks.xaml;Views\SuperAdminViews\ManageLibrarians.xaml;Views\SuperAdminViews\ManageStudents.xaml;Views\SuperAdminViews\SuperAdminMenu.xaml;
 
-True
+False
 
